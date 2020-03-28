@@ -1,0 +1,52 @@
+import * as express from "express";
+import admin from "../fb"; 
+//import Question from "../models/question";
+//import Option from "../models/option"; 
+
+
+//firebase 
+const db = admin.firestore();
+const questionCollection = 'Question';
+
+// router
+export let questionRouter = express.Router();
+
+questionRouter.get('/test',function(req,res,next) {
+    res.send('home  questions or root functionality');
+});
+
+// Get all questiones 
+
+questionRouter.get('/', async (req, res) => {
+   try {
+        const questionQuerySnapshot = await db.collection(questionCollection).get();
+        const questions: any[] = [];
+        questionQuerySnapshot.forEach(
+            (doc)=>{
+                questions.push({
+                    id: doc.id,
+                    title: doc.data()["title"],
+                    type: doc.data()["type"],
+                    options: doc.data()["options"],
+            });
+            }
+        );
+        res.status(200).json(questions);
+    } catch (error) {
+        res.status(500).send(error);
+    }
+});
+
+
+questionRouter.post('/addQuestion', async (req, res) => {
+    try {
+
+        const question = JSON.parse(req.body);
+        const newDoc = await db.collection(questionCollection).add(question);
+        res.status(201).send(`Created a new question: ${newDoc.id}`);
+     } catch (error) {
+        res.status(400).send(error);
+     }
+ });
+
+
