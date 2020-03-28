@@ -27,7 +27,7 @@ questionRouter.get('/', async (req, res) => {
                     id: doc.id,
                     title: doc.data()["title"],
                     type: doc.data()["type"],
-                    options: doc.data()["options"],
+                    dataOptions: doc.data()["dataOptions"],
             });
             }
         );
