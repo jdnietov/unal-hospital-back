@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2a8b5bce-2079-4ecd-8c50-28b2743221bf" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/swagger/apiDesign.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/.firebaserc" beforeDir="false" afterPath="$PROJECT_DIR$/questions/.firebaserc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/firebase.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/src/fb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/fb.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/src/models/option.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/models/option.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/src/models/question.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/models/question.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/src/questions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/questions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/questions/functions/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/tslint.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveDocument/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/saveDocument/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveDocument/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/saveDocument/package.json" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2a8b5bce-2079-4ecd-8c50-28b2743221bf" name="Default Changelist" comment="" />
+      <created>1585771732386</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1585771732386</updated>
+      <workItem from="1585771738446" duration="235000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

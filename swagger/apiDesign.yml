@@ -1,0 +1,412 @@
+swagger: '2.0'
+info:
+  description: API REST For Unal COVID App
+  version: 0.0.1
+  title: Swagger Unal-Covid
+  termsOfService: 'http://swagger.io/terms/'
+  contact:
+    email: distributionList@example.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: anyhosts.swagger.com
+basePath: /v1
+tags:
+  - name: users
+    description: Endpoint for Users
+    externalDocs:
+      description: Find out more
+      url: 'http://swagger.io'
+  - name: questions
+    description: Endpoint for Questions
+    externalDocs:
+      description: Find out more
+      url: 'http://swagger.io'
+  - name: answers
+    description: Endpoint for Answers
+    externalDocs:
+      description: Find out more
+      url: 'http://swagger.io'
+  - name: dashboard
+    description: Endpoint for DashBoard
+    externalDocs:
+      description: Find out more
+      url: 'http://swagger.io'
+schemes:
+  - https
+  - http
+paths:
+  /users/doctors:
+    post:
+      tags:
+        - users
+      summary: Operation to store User in DB
+      description: Post User
+      operationId: setDoctor
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: User To be Stored in DB
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Jwt'
+        '406':
+          description: User Registered
+        '500':
+          description: Internal Server Error
+  /users/patients:
+    post:
+      tags:
+        - users
+      summary: Operation to store User in DB
+      description: Post User
+      operationId: setPatient
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: User To be Stored in DB
+          required: true
+          schema:
+            $ref: '#/definitions/User'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Jwt'
+        '406':
+          description: User Registered
+        '500':
+          description: Internal Server Error
+  /users/login:
+    post:
+      tags:
+        - users
+      summary: Operation to LogIn a User
+      description: Post User
+      operationId: loginUser
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: User To be logged
+          required: true
+          schema:
+            $ref: '#/definitions/UserLogin'
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Jwt'
+        '406':
+          description: User Registered
+        '500':
+          description: Internal Server Error
+  /questions/addQuestion:
+    post:
+      tags:
+        - questions
+      summary: Operation to post a question
+      description: Post a questions
+      operationId: postQuestions
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
+            type: object
+            $ref: '#/definitions/Question'
+      responses:
+        '200':
+          description: successful operation
+
+        '500':
+          description: Internal Server Error
+    get:
+      tags:
+        - questions
+      summary: Operation to get Initial questions
+      description: Get Multiple Questions
+      operationId: getInitialQuestions
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Question'
+        '500':
+          description: Internal Server Error
+  '/questions/{userMail}':
+    get:
+      tags:
+        - questions
+      summary: Operation to get questions based on some specification of inference engine
+      description: Get Multiple Questions
+      operationId: getQuestionsBasedOn
+      parameters:
+        - name: userMail
+          in: path
+          required: true
+          type: string
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Question'
+        '500':
+          description: Internal Server Error
+  '/answers/{userMail}':
+    post:
+      tags:
+        - answers
+      summary: Operation to post answer of the questions
+      description: Post Multiples Answert
+      operationId: answerOfQuestions
+      produces:
+        - application/json
+      parameters:
+        - name: userMail
+          in: path
+          required: true
+          type: string
+        - in: body
+          name: body
+          description: Ansquer To be Stored in DB
+          required: true
+          schema:
+            $ref: '#/definitions/Answer'
+      responses:
+        '200':
+          description: OK
+        '500':
+          description: Internal Server Error
+  /dashboard/usersRanking:
+    post:
+      tags:
+        - dashboard
+      summary: Operation to send filters for catalog users
+      description: Post Filters
+      operationId: usersRanking
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          description: ranking of user by engine
+          required: true
+          schema:
+            $ref: '#/definitions/Filters'
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/User'
+        '500':
+          description: Internal Server Error
+
+  '/dashboard/semaphore':
+    get:
+      tags:
+        - dashboard
+      summary: Get semaphore counts (high, medium, low risk counts)
+      operationId: dashboardSemaphore
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            $ref: "#/definitions/SemaphoreCount"
+        '500':
+          description: Internal Server Error
+
+  /saveDocument:
+    post:
+      summary: Operation to save a JSON objects as diagnostic
+      operationId: sevaDocument
+      produces:
+        - application/json
+      responses:
+        '201':
+          description: Saved succesfuly
+        '400':
+          description: Bad Request
+        '404':
+          description: Unable to connect to firestore
+definitions:
+  UserLogin:
+    type: object
+    properties:
+      email:
+        type: string
+        example: example@example.com
+      password:
+        type: string
+        example: somePassword
+
+  #todo: Define which is the ID (phoneNumber, email)
+  User:
+    type: object
+    properties:
+      phoneNumber:
+        type: string
+        example: 3144366789
+      name:
+        type: string
+        example: Jhon Doe
+      age:
+        type: integer
+        example: 55
+      gender:
+        type: string
+        example: [male, female]
+      email:
+        type: string
+        example: example@example.com
+      password:
+        type: string
+        example: somePassword
+      userType:
+        type: string
+        example:
+          - patient
+          - doctor
+      geoLocation:
+        type: object
+        $ref: '#/definitions/GeoLocation'
+      date:
+        type: string
+        example: "3/30/2020, 12:47:02 PM"
+
+
+  GeoLocation:
+    properties:
+      latitude:
+        type: number
+        example: 38.926639
+      longitude:
+        type: number
+        example: -77.033811
+
+  Jwt:
+    type: object
+    properties:
+      jwt:
+        type: string
+        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiaWF0IjoxNTE2MjM5MDIyfQ.SflKxwRJSMeKKF2QT4fwpMeJf36POk6yJV_adQssw5c
+  Question:
+    type: object
+    properties:
+      id:
+        type: string
+        example: 8db6aa98-f6d8-4fe5-b8da-bbdb3dbd8f3c
+      title:
+        type: string
+        example: Tienes fiebre?
+      type:
+        enum:
+          - boolean
+          - media
+          - checkbox
+        example: boolean
+      dataOptions:
+        type: array
+        items:
+          type: string
+          example:
+            - Si
+            - No
+      weigth:
+        type: number
+        example:
+          - 1
+          - 0.8
+  Answer:
+    type: object
+    properties:
+      questionID:
+        type: string
+        example: 8db6aa98-f6d8-4fe5-b8da-bbdb3dbd8f3c
+      options:
+        type: array
+        items:
+          type: string
+  Filter:
+    type: object
+    properties:
+      numberOfPatientsPerPage:
+        type: integer
+        example: 50
+      page:
+        type: integer
+        example: 2
+      filters:
+        type: array
+        items:
+          type: object
+          properties:
+            age_gte:
+              type: number
+              example: 15
+            age_lte:
+              type: number
+              example: 72
+            risk_gte:
+              type: number
+              example: 22.2
+      columns:
+        type: array
+        items:
+          type: string
+        example:
+          - idPatient
+          - risk
+      sortBy:
+        type: array
+        items:
+          type: object
+          $ref: '#/definitions/Filter'
+
+  Filters:
+    type: object
+    properties:
+      sort:
+        type: string
+        example: risk
+      type:
+        type: string
+        example: desc
+
+  SemaphoreCount:
+    type: "object"
+    properties:
+      high:
+        type: "integer"
+      medium:
+        type: "integer"
+      low:
+        type: "integer"
+
+
+
+externalDocs:
+  description: Find out more about Swagger
+  url: 'http://swagger.io'
