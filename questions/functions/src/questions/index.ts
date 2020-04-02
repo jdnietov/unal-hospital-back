@@ -6,7 +6,7 @@ import admin from "../fb";
 
 //firebase 
 const db = admin.firestore();
-const questionCollection = 'Question';
+const questionCollection = 'Questions';
 
 // router
 export let questionRouter = express.Router();
@@ -26,8 +26,10 @@ questionRouter.get('/', async (req, res) => {
                 questions.push({
                     id: doc.id,
                     title: doc.data()["title"],
+                    label: doc.data()["label"],
+                    options: doc.data()["options"],
                     type: doc.data()["type"],
-                    dataOptions: doc.data()["dataOptions"],
+                    weight: doc.data()["weight"]
             });
             }
         );
@@ -40,7 +42,6 @@ questionRouter.get('/', async (req, res) => {
 
 questionRouter.post('/addQuestion', async (req, res) => {
     try {
-
         const question = JSON.parse(req.body);
         const newDoc = await db.collection(questionCollection).add(question);
         res.status(201).send(`Created a new question: ${newDoc.id}`);

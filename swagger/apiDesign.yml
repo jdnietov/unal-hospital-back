@@ -111,6 +111,24 @@ paths:
           description: User Registered
         '500':
           description: Internal Server Error
+  /questions:
+    get:
+      tags:
+        - questions
+      summary: Operation to get Initial questions
+      description: Get Multiple Questions
+      operationId: getInitialQuestions
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Question'
+        '500':
+          description: Internal Server Error
   /questions/addQuestion:
     post:
       tags:
@@ -131,24 +149,8 @@ paths:
 
         '500':
           description: Internal Server Error
-    get:
-      tags:
-        - questions
-      summary: Operation to get Initial questions
-      description: Get Multiple Questions
-      operationId: getInitialQuestions
-      produces:
-        - application/json
-      responses:
-        '200':
-          description: successful operation
-          schema:
-            type: array
-            items:
-              $ref: '#/definitions/Question'
-        '500':
-          description: Internal Server Error
-  '/questions/{userMail}':
+
+  '/questions/{userID}':
     get:
       tags:
         - questions
@@ -156,7 +158,7 @@ paths:
       description: Get Multiple Questions
       operationId: getQuestionsBasedOn
       parameters:
-        - name: userMail
+        - name: userID
           in: path
           required: true
           type: string
@@ -171,7 +173,7 @@ paths:
               $ref: '#/definitions/Question'
         '500':
           description: Internal Server Error
-  '/answers/{userMail}':
+  '/answers/{userID}':
     post:
       tags:
         - answers
@@ -181,7 +183,7 @@ paths:
       produces:
         - application/json
       parameters:
-        - name: userMail
+        - name: userID
           in: path
           required: true
           type: string
@@ -190,7 +192,9 @@ paths:
           description: Ansquer To be Stored in DB
           required: true
           schema:
-            $ref: '#/definitions/Answer'
+            type: array
+            items:
+              $ref: '#/definitions/Answer'
       responses:
         '200':
           description: OK
@@ -317,23 +321,23 @@ definitions:
     properties:
       id:
         type: string
-        example: 8db6aa98-f6d8-4fe5-b8da-bbdb3dbd8f3c
+        example: cBKaw4b68T3hxnau8ITv
       title:
         type: string
-        example: Tienes fiebre?
-      type:
-        enum:
-          - boolean
-          - media
-          - checkbox
-        example: boolean
-      dataOptions:
+        example: ¿Cómo te sientes hoy?
+      label:
+        type: object
+        $ref: '#/definitions/Label'
+      options:
         type: array
         items:
-          type: string
-          example:
-            - Si
-            - No
+          $ref: '#/definitions/Option'
+
+
+      type:
+        type: string
+        enum: [RadialBox, Checkbox, Text]
+
       weigth:
         type: number
         example:
@@ -344,11 +348,22 @@ definitions:
     properties:
       questionID:
         type: string
-        example: 8db6aa98-f6d8-4fe5-b8da-bbdb3dbd8f3c
+        example: ioLKq6X1RfXs7MflToBB
       options:
         type: array
         items:
-          type: string
+          $ref: '#/definitions/OptionAnswer'
+
+  OptionAnswer:
+    type: object
+    properties:
+      option_id:
+        type: string
+        example: cBKaw4b68T3hxnau8ITv
+      value:
+        type: string
+        example: true
+
   Filter:
     type: object
     properties:
@@ -405,6 +420,27 @@ definitions:
       low:
         type: "integer"
 
+  Label:
+    type: "object"
+    properties:
+      type:
+        type: string
+        example: text
+      content:
+        type: string
+        example: Por favor, indícanos si sientes que presentas uno o más síntomas de la enfermedad COVID-19.
+
+  Option:
+    type: "object"
+    properties:
+      id:
+        type: string
+        example: cBKaw4b68T3hxnau8ITv
+      label:
+        type: object
+        $ref: '#/definitions/Label'
+      content:
+        type: string
 
 
 externalDocs:
