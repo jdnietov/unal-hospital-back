@@ -346,7 +346,9 @@ definitions:
   Answer:
     type: object
     properties:
-      questionID:
+      userId:
+        type: string
+      questionId:
         type: string
         example: ioLKq6X1RfXs7MflToBB
       options:
@@ -357,7 +359,7 @@ definitions:
   OptionAnswer:
     type: object
     properties:
-      option_id:
+      optionId:
         type: string
         example: cBKaw4b68T3hxnau8ITv
       value:
@@ -441,6 +443,8 @@ definitions:
         $ref: '#/definitions/Label'
       content:
         type: string
+      weight:
+        type: number
 
 
 externalDocs:
