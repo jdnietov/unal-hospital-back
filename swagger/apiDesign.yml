@@ -36,6 +36,24 @@ schemes:
   - https
   - http
 paths:
+  /users/count:
+    get:
+      tags:
+        - users
+      summary: Return current amount of users
+      operationId: userCount
+      produces:
+        - application/json
+      responses:
+        '200':
+          description: successful operation
+          schema:
+            type: number
+            example: 20000
+        '406':
+          description: User Registered
+        '500':
+          description: Internal Server Error
   /users/doctors:
     post:
       tags:
@@ -215,7 +233,7 @@ paths:
           description: ranking of user by engine
           required: true
           schema:
-            $ref: '#/definitions/Filters'
+            $ref: '#/definitions/Filter'
       responses:
         '200':
           description: OK
@@ -276,6 +294,10 @@ definitions:
       name:
         type: string
         example: Jhon Doe
+      rank:
+        type: number
+      risk:
+        type: number
       age:
         type: integer
         example: 55
@@ -294,7 +316,6 @@ definitions:
           - patient
           - doctor
       geoLocation:
-        type: object
         $ref: '#/definitions/GeoLocation'
       date:
         type: string
@@ -367,48 +388,20 @@ definitions:
   Filter:
     type: object
     properties:
-      numberOfPatientsPerPage:
-        type: integer
-        example: 50
-      page:
-        type: integer
-        example: 2
-      filters:
-        type: array
-        items:
-          type: object
-          properties:
-            age_gte:
-              type: number
-              example: 15
-            age_lte:
-              type: number
-              example: 72
-            risk_gte:
-              type: number
-              example: 22.2
-      columns:
-        type: array
-        items:
-          type: string
-        example:
-          - idPatient
-          - risk
+      range:
+        type: object
+        properties:
+          from:
+            type: number
+            example: 0
+          to:
+            type: number
+            example: 15
       sortBy:
         type: array
         items:
-          type: object
-          $ref: '#/definitions/Filter'
-
-  Filters:
-    type: object
-    properties:
-      sort:
-        type: string
-        example: risk
-      type:
-        type: string
-        example: desc
+          type: string
+          example: "risk"
 
   SemaphoreCount:
     type: "object"
