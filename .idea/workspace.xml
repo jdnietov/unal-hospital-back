@@ -2,22 +2,24 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2a8b5bce-2079-4ecd-8c50-28b2743221bf" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/swagger/apiDesign.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/.firebaserc" beforeDir="false" afterPath="$PROJECT_DIR$/questions/.firebaserc" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/firebase.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/firebase.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/functions/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/functions/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/functions/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/functions/src/fb.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/fb.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/functions/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/functions/src/models/option.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/models/option.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/functions/src/models/question.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/models/question.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/unal-hospital-back.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/answers/functions/src/answers/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/answers/functions/src/core/functions.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/answers/functions/src/fb.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/answers/functions/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/answers/functions/src/models/option.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/answers/functions/src/models/question.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/questions/functions/src/core/functions.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/questions/functions/src/questions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/src/questions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/functions/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/questions/functions/tslint.json" beforeDir="false" afterPath="$PROJECT_DIR$/questions/functions/tslint.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveDocument/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/saveDocument/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/saveDocument/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/saveDocument/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveDocument/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/saveDocument/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/swagger/apiDesign.yml" beforeDir="false" afterPath="$PROJECT_DIR$/swagger/apiDesign.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,9 +27,49 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1a0r4c39qAfaY64Ll8RLIJw32I5" />
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/answers/functions/src" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/questions/functions/node_modules/typescript/lib" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/answers/functions/src" />
+      <recent name="$PROJECT_DIR$/answers/functions/src/answers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/questions/functions/src" />
+      <recent name="$PROJECT_DIR$/unal-mecuido-api/functions/src" />
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -51,7 +93,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1585771732386</updated>
-      <workItem from="1585771738446" duration="235000" />
+      <workItem from="1585771738446" duration="7770000" />
+      <workItem from="1585883181881" duration="14808000" />
     </task>
     <servers />
   </component>
@@ -61,12 +104,44 @@
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
+        <entry key="1">
+          <value>
+            <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="roots">
+                    <value>
+                      <list>
+                        <option value="$PROJECT_DIR$" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
+    </option>
+    <option name="OPEN_TABS">
+      <set>
+        <option value="1" />
+      </set>
     </option>
   </component>
 </project>

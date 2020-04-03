@@ -192,9 +192,8 @@ paths:
           description: Ansquer To be Stored in DB
           required: true
           schema:
-            type: array
-            items:
-              $ref: '#/definitions/Answer'
+            type: object
+            $ref: '#/definitions/Answers'
       responses:
         '200':
           description: OK
@@ -343,6 +342,19 @@ definitions:
         example:
           - 1
           - 0.8
+
+  Answers:
+    type: object
+    properties:
+      userID:
+        type: string
+        example: ioLKq6X1RfXs7MflToBB
+      answers:
+        type: array
+        items:
+          $ref: '#/definitions/Answer'
+
+
   Answer:
     type: object
     properties:
@@ -357,7 +369,7 @@ definitions:
   OptionAnswer:
     type: object
     properties:
-      option_id:
+      optionId:
         type: string
         example: cBKaw4b68T3hxnau8ITv
       value:
@@ -441,6 +453,9 @@ definitions:
         $ref: '#/definitions/Label'
       content:
         type: string
+      weigth:
+        type: number
+        example: 0.2
 
 
 externalDocs:

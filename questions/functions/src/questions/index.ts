@@ -1,7 +1,6 @@
 import * as express from "express";
-import admin from "../fb"; 
-//import Question from "../models/question";
-//import Option from "../models/option"; 
+import admin from "../fb";
+import * as core from "../core/functions";
 
 
 //firebase 
@@ -41,13 +40,17 @@ questionRouter.get('/', async (req, res) => {
 
 
 questionRouter.post('/addQuestion', async (req, res) => {
-    try {
-        const question = JSON.parse(req.body);
-        const newDoc = await db.collection(questionCollection).add(question);
-        res.status(201).send(`Created a new question: ${newDoc.id}`);
-     } catch (error) {
-        res.status(400).send(error);
-     }
+    // @ts-ignore
+    let response = await core.fireBaseAddDocument({
+        collectionName: questionCollection,
+        jsonDocument: req.body
+    });
+    const statusCode = response[0];
+    const statusDesc = response[1];
+
+    if (typeof statusCode === "number") {
+        res.status(statusCode).send(statusDesc);
+    }
  });
 
 
