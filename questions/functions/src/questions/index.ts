@@ -40,6 +40,15 @@ questionRouter.get('/', async (req, res) => {
 });
 
 
+questionRouter.get('/:collection/:userid', async (req, res) => {
+    try {
+        
+         res.status(200).json("Trying to get " + req.params.userid + "from " + req.params.collection);
+     } catch (error) {
+         res.status(500).send(error);
+     }
+ });
+
 questionRouter.post('/addQuestion', async (req, res) => {
     try {
         const question = JSON.parse(req.body);
@@ -49,5 +58,8 @@ questionRouter.post('/addQuestion', async (req, res) => {
         res.status(400).send(error);
      }
  });
+
+
+
 
 
